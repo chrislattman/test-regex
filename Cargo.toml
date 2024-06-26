@@ -1,0 +1,11 @@
+[package]
+name = "test-regex"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "regex"
+path = "regex.rs"
+
+[dependencies]
+regex = "1.10.5"
