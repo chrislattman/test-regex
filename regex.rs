@@ -23,8 +23,7 @@ fn main() {
         }
         let mut locs = pattern.capture_locations();
         pattern.captures_read(&mut locs, sstring);
-        println!("{}", offset + locs.get(1).unwrap().0);
-        println!("{}", offset + locs.get(1).unwrap().1);
+        println!("{}\n{}", offset + locs.get(1).unwrap().0, offset + locs.get(1).unwrap().1);
         offset += locs.get(0).unwrap().1 + 1; // adding 1 to skip the newline (global match includes end of line)
         caps = pattern.captures_at(sstring, offset);
     }
