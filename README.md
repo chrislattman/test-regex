@@ -32,3 +32,5 @@ The fourth regex is `^he[^A-Z]*\d{2}wo\w{2,}$`. Aside from the meanings outlined
 The fifth regex is `\W+`, which means one or more non-word characters. This is used to split a string into substrings that exclude any non-word characters (e.g. punctuation marks and whitespace).
 
 > Note: all but the C examples use Perl regex syntax, but the C example uses POSIX ERE (extended regular expressions) syntax. This is also reflected in the GNU and BSD versions of `grep -E`, respectively. To use Perl regex syntax in C, the libpcre3 library is available.
+
+> To compile the C example on Windows (which does not have regex.h as part of its C runtime), install libsystre for Mingw-w64: `pacman -S mingw-w64-ucrt-x86_64-libsystre`
