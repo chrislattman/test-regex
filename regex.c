@@ -54,13 +54,13 @@ int main(void)
     while (status == 0) {
         if (new_string == NULL) {
             offset = indices_1[0].rm_eo + 2; // to accommodate for alice which is 2 characters longer than bob
-            new_string = malloc(offset);
+            new_string = malloc(offset + 1);
             strncpy(new_string, cursor, indices_1[0].rm_so);
             strcpy(new_string + indices_1[0].rm_so, "alice");
         } else {
             old_offset = offset;
             offset += indices_1[0].rm_eo + 2; // to accommodate for alice which is 2 characters longer than bob
-            new_string = realloc(new_string, offset);
+            new_string = realloc(new_string, offset + 1);
             strncpy(new_string + old_offset, cursor, indices_1[0].rm_so);
             strcpy(new_string + old_offset + indices_1[0].rm_so, "alice");
         }
