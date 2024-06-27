@@ -35,10 +35,10 @@ int main(void)
         strcpy(match, cursor + indices_2[1].rm_so);
         match[indices_2[1].rm_eo - indices_2[1].rm_so] = '\0';
         printf("%s\n", match);
-#ifdef __MINGW64__
-        printf("%d\n%d\n", indices_2[1].rm_so + offset, indices_2[1].rm_eo + offset);
-#else
+#ifdef __APPLE__
         printf("%lld\n%lld\n", indices_2[1].rm_so + offset, indices_2[1].rm_eo + offset);
+#else
+        printf("%d\n%d\n", indices_2[1].rm_so + offset, indices_2[1].rm_eo + offset);
 #endif
         offset += indices_2[0].rm_eo + 1; // adding 1 to skip the newline (global match includes end of line)
         cursor += offset;
