@@ -43,6 +43,7 @@ int main(void)
         offset += indices_2[0].rm_eo + 1; // adding 1 to skip the newline (global match includes end of line)
         cursor += offset;
         status = regexec(&pattern, cursor, 2, indices_2, 0);
+        printf("\n");
     }
     free(match);
     free(global);

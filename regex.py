@@ -12,11 +12,12 @@ for result in pattern.finditer(sstring):
     print(result.group(1))
     print(result.start(1))
     print(result.end(1))
+    print()
 
 print(re.sub(r"(?m:bob$)", "alice", sstring))
 
-print(str(re.search(r"hello[0-9]+world", "hello42world") is not None).lower())
-print(str(re.search(r"^he[^A-Z]*\d{2}wo\w{2,}$", "hello42world") is not None).lower())
+print(re.search(r"hello[0-9]+world", "hello42world") is not None)
+print(re.search(r"^he[^A-Z]*\d{2}wo\w{2,}$", "hello42world") is not None)
 match_array = re.split(r"\W+", "Words, words, words.")
 for match_string in match_array:
     print(match_string)

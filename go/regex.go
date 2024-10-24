@@ -22,6 +22,7 @@ func main() {
 		fmt.Println(matches[i][1])
 		fmt.Println(indices[i][2])
 		fmt.Println(indices[i][3])
+		fmt.Println()
 	}
 
 	fmt.Println(regexp.MustCompile(`(?m:bob$)`).ReplaceAllString(sstring, "alice"))

@@ -18,10 +18,13 @@ go:
 c:
 	gcc -Wall -Wextra -Werror -pedantic -std=c99 -o regex regex.c $(C_LIB) && ./regex
 
+cpp:
+	g++ -Wall -Wextra -Werror -pedantic -std=c++17 -o regex regex.cpp && ./regex
+
 rust:
 	cargo run -q
 
 clean:
 	rm -rf regex target
 
-.PHONY: java python nodejs go c rust
+.PHONY: java python nodejs go c cpp rust

@@ -16,6 +16,7 @@ public class Regex {
             System.out.println(matcher.group(1));
             System.out.println(matcher.start(1));
             System.out.println(matcher.end(1));
+            System.out.println();
         }
 
         System.out.println(sstring.replaceAll("(?m:bob$)", "alice"));

@@ -2,3 +2,4 @@ target/
 regex
 *.exe
 .vscode/
+.DS_Store

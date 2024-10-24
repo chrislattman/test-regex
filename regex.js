@@ -12,6 +12,7 @@ if (String(pattern) !== String(pattern1)) {
     console.log(result[1]);
     console.log(result.indices[1][0]);
     console.log(result.indices[1][1]);
+    console.log();
 });
 
 console.log(sstring.replace(/bob$/gm, "alice"));
