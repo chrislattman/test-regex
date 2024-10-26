@@ -36,7 +36,7 @@ fn main() {
     let re = Regex::new(r"^he[^A-Z]*\d{2}wo\w{2,}$").unwrap();
     println!("{}", re.is_match("hello42world"));
     let re = Regex::new(r"\W+").unwrap();
-    let match_array: Vec<&str> = re.split("Words, words, words.").collect();
+    let match_array: Vec<_> = re.split("Words, words, words.").collect();
     for match_string in match_array.into_iter() {
         println!("{}", match_string);
     }
