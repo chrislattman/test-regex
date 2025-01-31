@@ -2,7 +2,8 @@
 
 string sstring = File.ReadAllText("sample.txt");
 string pattern = "(?m:^h.\\D\\S[a-z]{3,5}(...)\\w+\\d*$)";
-foreach (Match match in Regex.Matches(sstring, pattern)) {
+foreach (Match match in Regex.Matches(sstring, pattern))
+{
     Console.WriteLine(match.Groups[0].ToString());
     Console.WriteLine(match.Groups[1].ToString());
     Console.WriteLine(match.Groups[1].Index);
@@ -15,7 +16,8 @@ Console.WriteLine(MyRegex().Replace(sstring, "alice"));
 Console.WriteLine(MyRegex1().IsMatch("hello42world"));
 Console.WriteLine(MyRegex2().IsMatch("hello42world"));
 string[] matchArray = MyRegex3().Split("Words, words, words.");
-foreach (string match in matchArray) {
+foreach (string match in matchArray)
+{
     Console.WriteLine(match);
 }
 
