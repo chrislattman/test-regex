@@ -30,4 +30,4 @@ csharp:
 clean:
 	rm -rf regex target bin obj
 
-.PHONY: java python nodejs go c cpp rust
+.PHONY: java python nodejs go c cpp rust csharp clean
