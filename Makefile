@@ -24,7 +24,10 @@ cpp:
 rust:
 	cargo run -q
 
+csharp:
+	dotnet run
+
 clean:
-	rm -rf regex target
+	rm -rf regex target bin obj
 
 .PHONY: java python nodejs go c cpp rust

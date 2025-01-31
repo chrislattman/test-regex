@@ -3,3 +3,5 @@ regex
 *.exe
 .vscode/
 .DS_Store
+bin/
+obj/
