@@ -17,19 +17,29 @@ fn main() {
         let binding = caps.as_ref().unwrap();
         let mut iterator = binding.iter();
         let mut res = iterator.next();
-        while res != None {
+        while res.is_some() {
             println!("{}", res.unwrap().map(|m| m.as_str()).unwrap());
             res = iterator.next();
         }
         let mut locs = pattern.capture_locations();
         pattern.captures_read(&mut locs, sstring);
-        println!("{}\n{}", offset + locs.get(1).unwrap().0, offset + locs.get(1).unwrap().1);
+        println!(
+            "{}\n{}",
+            offset + locs.get(1).unwrap().0,
+            offset + locs.get(1).unwrap().1
+        );
         offset += locs.get(0).unwrap().1 + 1; // adding 1 to skip the newline (global match includes end of line)
         caps = pattern.captures_at(sstring, offset);
         println!();
     }
 
-    println!("{}", Regex::new(r"(?m:bob$)").unwrap().replace_all(sstring, "alice").as_ref());
+    println!(
+        "{}",
+        Regex::new(r"(?m:bob$)")
+            .unwrap()
+            .replace_all(sstring, "alice")
+            .as_ref()
+    );
 
     let re = Regex::new(r"hello[0-9]+world").unwrap();
     println!("{}", re.is_match("hello42world"));
@@ -38,6 +48,6 @@ fn main() {
     let re = Regex::new(r"\W+").unwrap();
     let match_array: Vec<_> = re.split("Words, words, words.").collect();
     for match_string in match_array.into_iter() {
-        println!("{}", match_string);
+        println!("{match_string}");
     }
 }
