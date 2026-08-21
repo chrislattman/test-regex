@@ -28,6 +28,6 @@ csharp:
 	dotnet run
 
 clean:
-	rm -rf regex target bin obj
+	cargo clean && dotnet clean && rm -f regex
 
 .PHONY: java python nodejs go c cpp rust csharp clean
