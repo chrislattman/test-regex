@@ -25,7 +25,7 @@ rust:
 	cargo run -q
 
 csharp:
-	dotnet run
+	dotnet run -v q
 
 clean:
 	cargo clean && dotnet clean && rm -f regex
